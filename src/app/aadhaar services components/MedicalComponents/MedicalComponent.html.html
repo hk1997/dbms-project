@@ -1,0 +1,118 @@
+<div class="container from-group panel panel-default" >
+  <a routerLink="">back</a>
+  <div class="row">
+  </div>
+  <div class="row" style="position: relative;padding-top: 5%">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><strong>Hospital id:</strong><input type="text" placeholder="hospital id" [(ngModel)]="hospital_id" class="form-control"></div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row" style="position: relative;padding-top: 3%">
+
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><strong>Aadhaar No:</strong><input type="text" placeholder="aadhaar no" [(ngModel)]="aadhaar_no" class="form-control"></div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row" style="position: relative;padding-top: 2%">
+
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 jumbotron" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+      <h2 style="position: relative;padding-left: 35%">{{rand_no}}</h2></div>
+    <div class="col-sm-4"></div>
+  </div>
+
+  <div class="row" style="position: relative;padding-top: 1%">
+
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><strong>Type the code shown above</strong><input type="text" placeholder="code" [(ngModel)]="typed_no" class="form-control"></div>
+    <div class="col-sm-4"></div>
+  </div>
+
+  <div class="row" style="position: relative;padding-top: 2%">
+
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><button class="btn btn-default btn-sm" (click)="onSubmit()">Submit</button>
+
+    </div>
+
+  </div>
+  <br>
+
+
+</div>
+<div class="container panel panel-info" style="position: relative;padding-top: 2%" [hidden]="!(show1 && show2)">
+  <h2>Personal Information:</h2>
+  <div class="row" style="position: relative;padding-top: 3%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Uid:</strong></div>
+    <div class="col-sm-4">{{aadhaar.Uid}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Name</strong></div>
+    <div class="col-sm-4">{{aadhaar.Cname}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>
+
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Father name:</strong></div>
+    <div class="col-sm-4">{{aadhaar.Fname}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>
+
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Address:</strong></div>
+    <div class="col-sm-4">{{aadhaar.Address}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>
+
+ <!-- <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Uid:</strong></div>
+    <div class="col-sm-4">{{aadhaar.Uid}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>-->
+
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Date of Birth:</strong></div>
+    <div class="col-sm-4">{{aadhaar.DoB}}</div>
+    <div class="col-sm-2"></div>
+
+  </div>
+</div>
+<div class="container panel panel-info" style="padding-top: 2%" [hidden]="!(show1 && show2)">
+  <h2>Insurance Information:</h2>
+
+  <div class=" panel  panel-heading panel-default" style="padding-bottom: 5%" *ngFor="let i of insurance">
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Insurance id:</strong></div>
+    <div class="col-sm-4">{{i.Insurance_Id}}</div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Claim Upto:</strong></div>
+    <div class="col-sm-4">₹ {{i.Claim_Amount}}</div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <div class="row" style="position: relative;padding-top: 1%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"><strong>Valid Upto:</strong></div>
+    <div class="col-sm-4">{{i.Valid_Upto}}</div>
+    <div class="col-sm-2"></div>
+  </div>
+
+</div>
+</div>
+<br><br><br><br>

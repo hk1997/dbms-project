@@ -4,17 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {AadhaarComponent} from "./aadhaar services components/aadhaar_service.component";
+import {Routes, RouterModule} from "@angular/router";
+import {MedicalComponent} from "./aadhaar services components/MedicalComponents/ModeicalComponent";
+import {AadhaarService} from "./aadhaar services components/aadhaar_service.service";
+import {InformationComponent} from "./aadhaar services components/MedicalComponents/Information";
+//import {AadhaarService} from "./aadhaar services components/aadhaar_service.service";
+
+const appRoutes: Routes = [
+  { path: '', component: AadhaarComponent },
+  {path:'medical',component:MedicalComponent},
+  {path:'information',component:InformationComponent}];
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,AadhaarComponent,MedicalComponent,InformationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,  RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AadhaarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
